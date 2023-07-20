@@ -1,0 +1,13 @@
+.popover {
+  position: fixed;
+  opacity: 0;
+  background-color: #fff;
+  color: #000;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+
+.open {
+  opacity: 1;
+}

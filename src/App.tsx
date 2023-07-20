@@ -1,22 +1,122 @@
-import { useState } from 'react'
 import './App.css'
 import { Popover } from './components/Popover/Popover'
 import { Button } from './components/Button/Button'
 
-function App() {
-  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
-  const [isOpen, setIsOpen] = useState(false)
+const renderCustomButton = (handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void) => {
+  return <Button onButtonClick={handleClick} />
+}
 
-  const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget)
-    setIsOpen(isOpen => !isOpen)
+function App() {
+  const style = {
+    maxWidth: 350 + 'px'
   }
 
   return (
     <>
-      <Button onButtonClick={handleButtonClick} />
-      <Popover isOpen={isOpen} anchorEl={anchorEl} position='top'>
-        <span>Some text</span>
+      <Popover position='bottom' trigger={renderCustomButton}>
+        <div>
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+        </div>
+      </Popover>
+      <Popover position='bottom' trigger={renderCustomButton}>
+        <div>
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+        </div>
+      </Popover>
+      <Popover position='right' trigger={renderCustomButton}>
+        <div style={style}>
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+          Some text
+        </div>
       </Popover>
     </>
   )

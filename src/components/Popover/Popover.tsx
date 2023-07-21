@@ -1,5 +1,6 @@
 import { CSSProperties, ReactNode, useState, useRef } from 'react'
 import styles from './Popover.module.css'
+import { useClickOutside } from '../../hooks/useClickOutside';
 
 type PopoverProps = {
   children: ReactNode,
@@ -49,12 +50,15 @@ export const Popover = ({ children, position = 'bottom', trigger }: PopoverProps
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
   const [isOpen, setIsOpen] = useState(false)
 
+  popoverRef && useClickOutside(popoverRef, () => { setIsOpen(false) })
+
   const popoverStyles: CSSProperties = {
     top: popoverRef.current ? calculateTop(popoverRef.current, anchorEl, position) : 0,
     left: popoverRef.current ? calculateLeft(popoverRef.current, anchorEl, position) : 0,
   }
 
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
     setAnchorEl(event.currentTarget)
     setIsOpen(isOpen => !isOpen)
   }

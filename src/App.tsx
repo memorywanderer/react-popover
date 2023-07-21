@@ -21,31 +21,6 @@ function App() {
           Some text
           Some text
           Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
         </div>
       </Popover>
       <Popover position='bottom' trigger={renderCustomButton}>
@@ -54,65 +29,10 @@ function App() {
           Some text
           Some text
           Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
         </div>
       </Popover>
       <Popover position='right' trigger={renderCustomButton}>
         <div style={style}>
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
-          Some text
           Some text
           Some text
           Some text

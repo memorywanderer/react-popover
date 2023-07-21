@@ -1,9 +1,17 @@
 type ButtonProps = {
-  onButtonClick: (event: React.MouseEvent<HTMLButtonElement>) => void
+  onButtonClick: (event: React.MouseEvent<HTMLButtonElement>) => void,
+  isOpen: boolean
 }
 
-export const Button = ({ onButtonClick }: ButtonProps) => {
+export const Button = ({ onButtonClick, isOpen }: ButtonProps) => {
   return (
-    <button onClick={onButtonClick}>Button</button>
+    <button
+      type="button"
+      aria-expanded={isOpen}
+      aria-haspopup="dialog"
+      onClick={onButtonClick}
+    >
+      Button
+    </button>
   )
 }

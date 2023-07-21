@@ -8,10 +8,11 @@ export const useClickOutside = (ref: React.MutableRefObject<HTMLDivElement | nul
         callback();
       }
     }
-    document.addEventListener('click', onOutsideClick)
+
+    setTimeout(() => document.addEventListener('click', onOutsideClick), 0)
 
     return () => {
-      document.removeEventListener('click', onOutsideClick);
+      setTimeout(() => document.removeEventListener('click', onOutsideClick), 0)
     }
   }, [ref, callback])
 }

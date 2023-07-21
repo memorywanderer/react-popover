@@ -5,7 +5,7 @@ import { useClickOutside } from '../../hooks/useClickOutside';
 type PopoverProps = {
   children: ReactNode,
   position: 'top' | 'right' | 'bottom' | 'left',
-  trigger: (handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void) => ReactNode;
+  trigger: (handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void, isOpen: boolean) => ReactNode;
 }
 
 const calculateTop = (
@@ -68,10 +68,11 @@ export const Popover = ({ children, position = 'bottom', trigger }: PopoverProps
       <section
         ref={popoverRef}
         style={popoverStyles}
-        className={`${styles.popover} ${isOpen ? styles.open : ''}`}>
+        className={`${styles.popover} ${isOpen ? styles.open : ''}`}
+      >
         {children}
       </section>
-      {trigger(handleButtonClick)}
+      {trigger(handleButtonClick, isOpen)}
     </>
 
   )

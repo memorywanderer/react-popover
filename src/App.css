@@ -1,42 +1,168 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* reset */
+button,
+fieldset,
+input {
+  all: unset;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.PopoverContent {
+  border-radius: 4px;
+  padding: 20px;
+  width: 260px;
+  background-color: white;
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
-@keyframes logo-spin {
+.PopoverContent:focus {
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px,
+    0 0 0 2px var(--violet-7);
+}
+
+.PopoverContent[data-state='open'][data-side='top'] {
+  animation-name: slideDownAndFade;
+}
+
+.PopoverContent[data-state='open'][data-side='right'] {
+  animation-name: slideLeftAndFade;
+}
+
+.PopoverContent[data-state='open'][data-side='bottom'] {
+  animation-name: slideUpAndFade;
+}
+
+.PopoverContent[data-state='open'][data-side='left'] {
+  animation-name: slideRightAndFade;
+}
+
+.PopoverArrow {
+  fill: white;
+}
+
+.PopoverClose {
+  font-family: inherit;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.PopoverClose:hover {
+  background-color: #111;
+}
+
+.IconButton {
+  font-family: inherit;
+  border-radius: 100%;
+  height: 35px;
+  width: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--violet-11);
+  background-color: white;
+  box-shadow: 0 2px 10px var(--black-a7);
+}
+
+.IconButton:hover {
+  background-color: var(--violet-3);
+}
+
+.IconButton:focus {
+  box-shadow: 0 0 0 2px black;
+}
+
+.Fieldset {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.Label {
+  font-size: 13px;
+  color: var(--violet-11);
+  width: 75px;
+}
+
+.Input {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--violet-11);
+  box-shadow: 0 0 0 1px var(--violet-7);
+  height: 25px;
+}
+
+.Input:focus {
+  box-shadow: 0 0 0 2px var(--violet-8);
+}
+
+.Text {
+  margin: 0;
+  color: var(--mauve-12);
+  font-size: 15px;
+  line-height: 19px;
+  font-weight: 500;
+}
+
+@keyframes slideUpAndFade {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(2px);
   }
+
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes slideRightAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-.card {
-  padding: 2em;
+@keyframes slideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.read-the-docs {
-  color: #888;
+@keyframes slideLeftAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
